@@ -1158,9 +1158,12 @@ function openLobby(){
   if(q&&!joinCode.value)joinCode.value=q.toUpperCase().slice(0,4);
 }
 function wsUrl(){
-  var h=location.host;
-  if(!/^https?:$/.test(location.protocol)||!h)h='localhost:8000';
-  return 'ws://127.0.0.1:8000/ws';
+  // If running locally, point to local Python server
+  if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+    return 'ws://127.0.0.1:8000/ws';
+  }
+  // Point to your free cloud backend on Render (replace with your actual Render service name)
+  return 'wss://nap-trap.onrender.com/ws';
 }
 function connect(first){
   if(net.ws)return;
