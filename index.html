@@ -1160,7 +1160,7 @@ function openLobby(){
 function wsUrl(){
   var h=location.host;
   if(!/^https?:$/.test(location.protocol)||!h)h='localhost:8000';
-  return 'ws://127.0.0.1:8000/ws';
+  return 'https://naptrap.vercel.app/ ws';
 }
 function connect(first){
   if(net.ws)return;
