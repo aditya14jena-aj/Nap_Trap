@@ -270,7 +270,7 @@ def main():
 
     print('Pillow Fight Arena server')
     print('  This machine : http://localhost:%d' % args.port)
-    print('  Same network : https://naptrap.vercel.app/%s:%d   <- share this with friends' % (lan_ip(), args.port))
+    print('  Same network : http://%s:%d   <- share this with friends' % (lan_ip(), args.port))
     web.run_app(app, host=args.host, port=args.port, print=None)
 
 
